@@ -5,6 +5,20 @@ export interface AnalysisResult {
   insight: string;
 }
 
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+export interface AuthStore {
+  user: User | null;
+  isAuthenticated: boolean;
+  login: (email: string, password: string) => Promise<void>;
+  signup: (name: string, email: string, password: string) => Promise<void>;
+  logout: () => void;
+}
+
 export interface ImageStore {
   selectedImage: File | null;
   previewUrl: string | null;
