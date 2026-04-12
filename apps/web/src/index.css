@@ -3,7 +3,35 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --auth-input-autofill-bg: rgb(249 250 251);
+    --auth-input-autofill-fg: rgb(17 24 39);
+  }
+
+  .dark {
+    --auth-input-autofill-bg: rgb(31 41 55);
+    --auth-input-autofill-fg: rgb(243 244 246);
+  }
+
   body {
     @apply antialiased transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .auth-input {
+    @apply w-full h-11 rounded-lg border border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition-[border-color,box-shadow,background-color,color] duration-200;
+    @apply dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder:text-gray-500;
+    @apply focus:border-violet-400 focus:ring-2 focus:ring-violet-500/20;
+  }
+
+  .auth-input:-webkit-autofill,
+  .auth-input:-webkit-autofill:hover,
+  .auth-input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--auth-input-autofill-fg);
+    caret-color: var(--auth-input-autofill-fg);
+    -webkit-box-shadow: 0 0 0 1000px var(--auth-input-autofill-bg) inset;
+    box-shadow: 0 0 0 1000px var(--auth-input-autofill-bg) inset;
+    transition: background-color 9999s ease-in-out 0s;
   }
 }
