@@ -19,33 +19,33 @@ export default function ForgotPasswordPage() {
     <div className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-sm animate-slide-up">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-white mb-2">Reset password</h1>
-          <p className="text-gray-400 text-sm">Enter your email and we'll send a reset link</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Reset password</h1>
+          <p className="text-gray-500 dark:text-gray-400 text-sm">Enter your email and we'll send a reset link</p>
         </div>
 
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+        <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 transition-colors duration-200">
           {submitted ? (
             <div className="text-center space-y-4 animate-fade-in">
-              <div className="w-12 h-12 mx-auto rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center">
-                <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <div className="w-12 h-12 mx-auto rounded-full bg-green-100 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 flex items-center justify-center">
+                <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
               </div>
-              <p className="text-gray-300 text-sm">If this email exists, a reset link has been sent.</p>
-              <Link to="/login" className="inline-block text-sm text-violet-400 hover:text-violet-300 transition-colors">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">If this email exists, a reset link has been sent.</p>
+              <Link to="/login" className="inline-block text-sm text-violet-600 dark:text-violet-400 hover:text-violet-500 dark:hover:text-violet-300 transition-colors">
                 Back to login
               </Link>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-gray-400">Email</label>
+                <label className="text-xs font-medium text-gray-500 dark:text-gray-400">Email</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 transition-colors"
+                  className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-2.5 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 transition-colors"
                 />
               </div>
 
@@ -63,8 +63,8 @@ export default function ForgotPasswordPage() {
                 {loading ? "Sending..." : "Send Reset Link"}
               </button>
 
-              <p className="text-center text-sm text-gray-500">
-                <Link to="/login" className="text-violet-400 hover:text-violet-300 transition-colors">Back to login</Link>
+              <p className="text-center text-sm text-gray-500 dark:text-gray-500">
+                <Link to="/login" className="text-violet-600 dark:text-violet-400 hover:text-violet-500 dark:hover:text-violet-300 transition-colors">Back to login</Link>
               </p>
             </form>
           )}

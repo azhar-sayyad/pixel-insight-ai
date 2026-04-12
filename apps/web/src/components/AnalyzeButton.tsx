@@ -24,7 +24,7 @@ export default function AnalyzeButton({ onLimitReached }: { onLimitReached?: () 
   if (isLimitReached) {
     return (
       <div className="space-y-3">
-        <div className="w-full py-3.5 rounded-xl text-sm text-center bg-gray-800/60 border border-gray-700 text-gray-400">
+        <div className="w-full py-3.5 rounded-xl text-sm text-center bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-400">
           Free limit reached
         </div>
         <button
@@ -32,7 +32,7 @@ export default function AnalyzeButton({ onLimitReached }: { onLimitReached?: () 
           className="w-full py-3 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg shadow-violet-500/20 flex items-center justify-center gap-2"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25-2.25v6.75a2.25 2.25 0 002.25 2.25z" />
           </svg>
           Unlock Unlimited Analysis
         </button>
@@ -50,7 +50,7 @@ export default function AnalyzeButton({ onLimitReached }: { onLimitReached?: () 
         className={`
           w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2
           ${disabled
-            ? "bg-gray-800 text-gray-500 cursor-not-allowed"
+            ? "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-500 cursor-not-allowed"
             : "bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 hover:-translate-y-0.5"
           }
         `}
@@ -74,8 +74,8 @@ export default function AnalyzeButton({ onLimitReached }: { onLimitReached?: () 
       </button>
 
       {!isAuthenticated && (
-        <p className="text-center text-xs text-gray-500">
-          Free usage: <span className="text-gray-300 font-medium">{count} / {GUEST_LIMIT}</span> used
+        <p className="text-center text-xs text-gray-400 dark:text-gray-500">
+          Free usage: <span className="text-gray-700 dark:text-gray-300 font-medium">{count} / {GUEST_LIMIT}</span> used
         </p>
       )}
     </div>
