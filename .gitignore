@@ -1,4 +1,53 @@
-node_modules
-dist
-.turbo
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+.vite/
+storybook-static/
+
+# Turbo / task caches
+.turbo/
+
+# TypeScript
+*.tsbuildinfo
+
+# Test / coverage
+coverage/
+.nyc_output/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env*.example
 *.local
+
+# Package manager caches
+.pnpm-store/
+.npm/
+.yarn/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
