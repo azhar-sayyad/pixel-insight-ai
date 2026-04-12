@@ -43,7 +43,7 @@ bun-debug.log*
 .yarn/
 
 # IDE / editor
-.idea/
+#.idea/
 .vscode/
 *.swp
 *.swo
